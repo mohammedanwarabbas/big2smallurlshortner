@@ -22,9 +22,9 @@ Minimal instructions for review. Repo: https://github.com/mohammedanwarabbas/big
 git clone https://github.com/mohammedanwarabbas/big2smallurlshortner.git
 cd big2smallurlshortner
 ```
-2) Install deps
+2) Install deps (peer dependency warnings related to React 19 and Material-UI might come)
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 3) Create `.env.local` (example values):
 ```bash
@@ -35,13 +35,21 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 MONGODB_URI=mongodb://localhost:27017/b2s
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
-4) Dev server
+4) Build
 ```bash
-npm run dev
+npm run build
+```
+
+5) Start
+```bash
+npm run start
 ```
 Open http://localhost:3000
 
-## Seeding (optional)
+
+
+
+## Seeding n number of links(optional)
 - Configure in `scripts/seedLinks.ts` (or with env):
 ```bash
 SEED_USER_ID=<existing_user_id>
@@ -53,14 +61,6 @@ npm run seed
 # If env not loading, run: DOTENV_CONFIG_PATH=.env.local npx tsx -r dotenv/config scripts/seedLinks.ts
 ```
 
-## Build/Run (Production)
-```bash
-npm run build
-npm start
-```
-
-## Notes
-- Dev hot refresh can sometimes cause hydration warnings with heavy client libs; production build is stable.
 
 ## Repo
 https://github.com/mohammedanwarabbas/big2smallurlshortner
