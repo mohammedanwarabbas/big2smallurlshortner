@@ -9,6 +9,7 @@ import { theme } from "@/lib/theme";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const muiCache = createCache({ key: "mui", prepend: true });
 
@@ -22,6 +23,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 							<CssBaseline />
                             <Navbar />
                             {children}
+							<Footer />
 						</ThemeProvider>
 					</StyledEngineProvider>
 				</CacheProvider>
